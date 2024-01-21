@@ -25,3 +25,30 @@ spec:
   accessModes:
     - ReadWriteMany
   storageClassName: palworld-server
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: palworld-wireproxy-config
+spec:
+  capacity:
+    storage: 500Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: palworld-wireproxy-config
+  hostPath:
+    path: /data/palworld-wireproxy-config
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: palworld-wireproxy-config
+  namespace: palworld
+spec:
+  resources:
+    requests:
+      storage: 10Mi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: palworld-wireproxy-config

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: palworld-server
-          image: thijsvanloef/palworld-server-docker:latest
+          image: kingyosun/palserver:0.0.1
           env:
             - name: PUID
               value: "1000"
@@ -36,9 +36,13 @@ spec:
               value: "{{ .Values.server_NAME }}"
             - name: ADMIN_PASSWORD
               value: "{{ .Values.admin_password }}"
+            - name: WIREPROXY_CONFIG_PATH
+              value: /wireproxy_config/default.conf
           volumeMounts:
             - name: palworld-pvc
               mountPath: /palworld
+            - name: palworld-wireproxy-config
+              mountPath: /wireproxy_config
           ports:
             - containerPort: 8211
             - containerPort: 27015
@@ -46,3 +50,6 @@ spec:
         - name: palworld-pvc
           persistentVolumeClaim:
             claimName: palworld-server
+        - name: palworld-wireproxy-config
+          persistentVolumeClaim:
+            claimName: palworld-wireproxy-config
