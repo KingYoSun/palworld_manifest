@@ -10,8 +10,8 @@ spec:
   ports:
     - port: 8211
       protocol: TCP
-      name: http
+      name: game
     - port: 27015
       protocol: TCP
-      name: http
+      name: query
   selector: {{- include "palworld.selectorLabels" . | nindent 4 }}
