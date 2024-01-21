@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { include "palworld.fullname" . } }
+  name: {{ include "palworld.fullname" . }}
   namespace: { { .Values.namespace } }
-  labels: { { - include "palworld.labels" . | nindent 4 } }
+  labels: {{- include "palworld.labels" . | nindent 4 }}
 spec:
   selector:
-    matchLabels: { { - include "palworld.selectorLabels" . | nindent 6 } }
+    matchLabels: {{- include "palworld.selectorLabels" . | nindent 6 }}
   replicas: 1
   template:
     metadata:
-      labels: { { - include "palworld.selectorLabels" . | nindent 8 } }
+      labels: {{- include "palworld.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: palworld-server
