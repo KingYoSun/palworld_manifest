@@ -2,4 +2,7 @@ namaspace: palworld
 players: 32
 multithreading: true
 update_on_boot: true
-community: false
+community: true
+server_password: needoverride
+server_name: boochang_yo_sun
+admin_password: needoverride
