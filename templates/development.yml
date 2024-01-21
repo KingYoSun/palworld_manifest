@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: { { include "palworld.fullname" . } }
+  namespace: { { .Values.namespace } }
+  labels: { { - include "palworld.labels" . | nindent 4 } }
+spec:
+  selector:
+    matchLabels: { { - include "palworld.selectorLabels" . | nindent 6 } }
+  replicas: 1
+  template:
+    metadata:
+      labels: { { - include "palworld.selectorLabels" . | nindent 8 } }
+    spec:
+      containers:
+        - name: palworld-server
+          image: thijsvanloef/palworld-server-docker:latest
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: PORT
+              value: "8211"
+            - name: PLAYERS
+              value: "{{ .Values.players }}"
+            - name: MULTITHREADING
+              value: "{{ .Values.multithreading }}"
+            - name: UPDATE_ON_BOOT
+              value: "{{ .Values.update_on_boot }}"
+            - name: COMMUNITY
+              value: "{{ .Values.community }}"
+          volumeMounts:
+            - name: palworld-pvc
+              mountPath: /palworld
+          ports:
+            - containerPort: 8211
+            - containerPort: 27015
+      volumes:
+        - name: palworld-pvc
+          persistentVolumeClaim:
+            claimName: palworld-server

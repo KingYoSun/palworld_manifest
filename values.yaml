@@ -1,0 +1,5 @@
+namaspace: palworld
+players: 32
+multithreading: true
+update_on_boot: true
+community: false

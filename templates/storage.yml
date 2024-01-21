@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: palworld-server
+spec:
+  capacity:
+    storage: 500Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: palworld-server
+  hostPath:
+    path: /data/palworld-server
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: palworld-server
+  namespace: palworld
+spec:
+  resources:
+    requests:
+      storage: 100Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: palworld-server
