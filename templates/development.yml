@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "palworld.fullname" . }}
-  namespace: { { .Values.namespace } }
+  namespace: {{ .Values.namespace }}
   labels: {{- include "palworld.labels" . | nindent 4 }}
 spec:
   selector:
