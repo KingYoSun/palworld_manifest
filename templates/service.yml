@@ -6,12 +6,18 @@ metadata:
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 8211
       protocol: TCP
-      name: game
+      name: game-tcp
     - port: 27015
       protocol: TCP
-      name: query
+      name: query-tcp
+    - port: 8211
+      protocol: UDP
+      name: game-udp
+    - port: 27015
+      protocol: UDP
+      name: query-udp
   selector: {{- include "palworld.selectorLabels" . | nindent 4 }}
