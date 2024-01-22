@@ -9,14 +9,11 @@ spec:
   type: NodePort
   ports:
     - port: 8211
-      protocol: TCP
-      name: game-tcp
-    - port: 27015
-      protocol: TCP
-      name: query-tcp
-    - port: 8211
       protocol: UDP
       name: game-udp
+    - port: 8212
+      protocol: UDP
+      name: test-udp
     - port: 27015
       protocol: UDP
       name: query-udp
