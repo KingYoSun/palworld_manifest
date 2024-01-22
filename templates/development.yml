@@ -28,6 +28,10 @@ spec:
               value: "8211"
             - name: PLAYERS
               value: "{{ .Values.players }}"
+            - name: PUBLIC_IP
+              value: "172.16.0.1"
+            - name: PUBLIC_PORT
+              value: "8211"
             - name: MULTITHREADING
               value: "{{ .Values.multithreading }}"
             - name: UPDATE_ON_BOOT
