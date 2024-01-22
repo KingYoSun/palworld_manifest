@@ -46,6 +46,9 @@ spec:
           ports:
             - containerPort: 8211
             - containerPort: 27015
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
       volumes:
         - name: palworld-pvc
           persistentVolumeClaim:
