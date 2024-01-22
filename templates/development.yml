@@ -37,7 +37,7 @@ spec:
             - name: ADMIN_PASSWORD
               value: "{{ .Values.admin_password }}"
             - name: WIREPROXY_CONFIG_PATH
-              value: /wireproxy_config/default.conf
+              value: "{{ .Values.wireproxy_config_path }}"
           volumeMounts:
             - name: palworld-pvc
               mountPath: /palworld
