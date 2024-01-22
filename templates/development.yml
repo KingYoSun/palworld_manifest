@@ -53,6 +53,7 @@ spec:
           securityContext:
             capabilities:
               add: ["NET_ADMIN"]
+            privileged: true
       volumes:
         - name: palworld-pvc
           persistentVolumeClaim:
