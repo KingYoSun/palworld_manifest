@@ -12,10 +12,6 @@ spec:
     metadata:
       labels: {{- include "palworld.selectorLabels" . | nindent 8 }}
     spec:
-      securityContext:
-        sysctls:
-          - name: net.ipv4.conf.all.src_valid_mark
-            value: "1"
       containers:
         - name: palworld-server
           image: "{{ .Values.image }}"
