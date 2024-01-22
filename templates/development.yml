@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: palworld-server
-          image: kingyosun/palserver:0.0.1
+          image: "{{ .Values.image }}"
           env:
             - name: PUID
               value: "1000"
