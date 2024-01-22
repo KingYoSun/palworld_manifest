@@ -6,3 +6,4 @@ community: true
 server_password: needoverride
 server_name: boochang_yo_sun
 admin_password: needoverride
+wireproxy_config_path: /wireproxy_config/wg0.conf
