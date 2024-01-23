@@ -71,16 +71,12 @@ spec:
             claimName: palworld-wireproxy-config
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: Job
 metadata:
-  name: {{ include "palworld.fullname" . }}-rcon
-  namespace: {{ .Values.namespace }}
-  labels: {{- include "palworld.labels" . | nindent 4 }}
+  name: palworld-rcon
+  namespace: palworld
 spec:
   backoffLimit: 0
-  selector:
-    matchLabels: {{- include "palworld-rcon.selectorLabels" . | nindent 6 }}
-  replicas: 1
   template:
     metadata:
       labels: {{- include "palworld-rcon.selectorLabels" . | nindent 8 }}
@@ -88,4 +84,5 @@ spec:
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
-          args: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}", "Info"]
+          command: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}", "Info"]
+      restartPolicy: Never
