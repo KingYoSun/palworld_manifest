@@ -6,7 +6,7 @@ metadata:
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 8211
       protocol: UDP
