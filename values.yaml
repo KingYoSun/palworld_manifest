@@ -3,7 +3,7 @@ image: kingyosun/palserver:0.0.2
 players: 32
 multithreading: true
 update_on_boot: true
-community: true
+community: false
 server_password: needoverride
 server_name: boochang_yo_sun
 admin_password: needoverride

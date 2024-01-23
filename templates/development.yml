@@ -38,8 +38,6 @@ spec:
               value: "{{ .Values.update_on_boot }}"
             - name: COMMUNITY
               value: "{{ .Values.community }}"
-            - name: SERVER_PASSWORD
-              value: "{{ .Values.server_password }}"
             - name: SERVER_NAME
               value: "{{ .Values.server_NAME }}"
             - name: ADMIN_PASSWORD
