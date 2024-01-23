@@ -39,7 +39,7 @@ spec:
             - name: COMMUNITY
               value: "{{ .Values.community }}"
             - name: SERVER_NAME
-              value: "{{ .Values.server_NAME }}"
+              value: "{{ .Values.server_name }}"
             - name: ADMIN_PASSWORD
               value: "{{ .Values.admin_password }}"
             - name: WIREPROXY_CONFIG_PATH
