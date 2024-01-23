@@ -69,6 +69,7 @@ spec:
         - name: palworld-wireproxy-config
           persistentVolumeClaim:
             claimName: palworld-wireproxy-config
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
