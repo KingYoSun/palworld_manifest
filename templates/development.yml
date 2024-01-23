@@ -71,7 +71,7 @@ spec:
             claimName: palworld-wireproxy-config
 ---
 apiVersion: apps/v1
-kind: Job
+kind: Deployment
 metadata:
   name: {{ include "palworld.fullname" . }}-rcon
   namespace: {{ .Values.namespace }}
@@ -85,7 +85,6 @@ spec:
     metadata:
       labels: {{- include "palworld-rcon.selectorLabels" . | nindent 8 }}
     spec:
-      restartPolicy: Never
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
