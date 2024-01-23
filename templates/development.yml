@@ -78,8 +78,6 @@ metadata:
 spec:
   backoffLimit: 0
   template:
-    metadata:
-      labels: {{- include "palworld-rcon.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: palworld-rcon
