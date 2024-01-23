@@ -87,4 +87,4 @@ spec:
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
-          args: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}"]
+          args: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}", "Info"]
