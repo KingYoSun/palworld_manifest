@@ -77,7 +77,6 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels: {{- include "palworld.labels" . | nindent 4 }}
 spec:
-  restartPolicy: OnFailure
   selector:
     matchLabels: {{- include "palworld-rcon.selectorLabels" . | nindent 6 }}
   replicas: 1
@@ -85,6 +84,7 @@ spec:
     metadata:
       labels: {{- include "palworld-rcon.selectorLabels" . | nindent 8 }}
     spec:
+      restartPolicy: OnFailure
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
