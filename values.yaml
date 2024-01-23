@@ -10,3 +10,4 @@ server_name: boochang_yo_sun
 admin_password: needoverride
 wireproxy_config_path: /wireproxy_config/wg0.conf
 server_host: palworld-server-palserver.palworld.svc.cluster.local
+public_ip: 0.0.0.0
