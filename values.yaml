@@ -1,5 +1,6 @@
 namaspace: palworld
 image: kingyosun/palserver:0.0.2
+rcon_image: outdead/rcon:latest
 players: 32
 multithreading: true
 update_on_boot: true
@@ -8,3 +9,4 @@ server_password: needoverride
 server_name: boochang_yo_sun
 admin_password: needoverride
 wireproxy_config_path: /wireproxy_config/wg0.conf
+server_host: palworld-server-palserver.palworld.svc.cluster.local

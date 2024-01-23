@@ -50,6 +50,11 @@ app.kubernetes.io/name: {{ include "palworld.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
+{{- define "palworld-rcon.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "palworld.name" . }}-rcon
+app.kubernetes.io/instance: {{ .Release.Name }}-rcon
+{{- end }}
+
 {{/*
 Create the name of the service account to use
 */}}
