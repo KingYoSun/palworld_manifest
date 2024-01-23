@@ -84,7 +84,7 @@ spec:
     metadata:
       labels: {{- include "palworld-rcon.selectorLabels" . | nindent 8 }}
     spec:
-      restartPolicy: OnFailure
+      restartPolicy: Never
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
