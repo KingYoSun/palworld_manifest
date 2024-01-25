@@ -82,5 +82,5 @@ spec:
       containers:
         - name: palworld-rcon
           image: "{{ .Values.rcon_image }}"
-          command: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}", "ShowPlayers"]
+          command: ['/rcon', '-a', "{{ .Values.server_host }}:25575", '-p', "{{ .Values.admin_password  }}", "{{ .Values.admin_command }}"]
       restartPolicy: Never
