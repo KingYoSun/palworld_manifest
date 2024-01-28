@@ -46,6 +46,8 @@ spec:
               value: "{{ .Values.admin_password }}"
             - name: WIREPROXY_CONFIG_PATH
               value: "{{ .Values.wireproxy_config_path }}"
+            - name: PAL_EGG_DEFAULT_HATCHING_TIME
+              value: "{{ .Values.PAL_EGG_DEFAULT_HATCHING_TIME }}"
           volumeMounts:
             - name: palworld-pvc
               mountPath: /palworld
